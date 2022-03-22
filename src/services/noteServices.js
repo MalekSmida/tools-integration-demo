@@ -1,7 +1,7 @@
-import Http from "./Http";
+import Http from './Http';
 
 async function getNotes() {
-  const res = await Http.get("/posts");
+  const res = await Http.get('/posts');
   return res.data;
 }
 

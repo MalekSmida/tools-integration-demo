@@ -1,3 +1,3 @@
 export const HttpConfig = {
-  baseURL: process.env.REACT_APP_API,
+  baseURL: process.env.REACT_APP_API
 };

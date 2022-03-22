@@ -1,9 +1,9 @@
 // node modules
-import React from "react";
+import React from 'react';
 
 // local files
-import { Input, Note, Button } from "../../components";
-import "./index.css";
+import { Input, Note, Button } from '../../components';
+import './index.css';
 
 function index() {
   return (

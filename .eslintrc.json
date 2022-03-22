@@ -3,9 +3,10 @@
     "node": true,
     "browser": true,
     "es2021": true,
-    "jest": true
+    "jest": true // allows Jest to use global variables in your test files such as describe, it or test
   },
   "extends": [
+    // you can use popular style guides such as the one of Airbnb, Google or Standard.
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime" // If you are using the new JSX transform from React 17
@@ -15,11 +16,19 @@
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module" // ECMAScript modules (import and export)
   },
-  "plugins": ["react"],
+  "plugins": [
+    // you have to install the plugin as a dev dependency if you want your rules to work correctly.
+    // As an example, eslint-plugin-react contains many rules related to React.
+    "react"
+  ],
+
   "rules": {
-    "react/react-in-jsx-scope": "off" // importing react to a file is optional
+    // Each rule has a value that is either off if you want to disable the rule, warn if it should show a warning or error if it should throw an error.
+    "react/react-in-jsx-scope": "off", // importing react to a file is optional
+    "no-console": "warn" // warns the use of console.log
+    // "import/first": "error" // Includes the import plugin and reports any imports that come after non-import statements
   },
   "settings": {
     "react": {

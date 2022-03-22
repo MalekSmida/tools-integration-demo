@@ -1,5 +1,5 @@
 // local files
-import "./index.css";
+import './index.css';
 
 function index() {
   return (

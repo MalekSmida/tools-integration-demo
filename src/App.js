@@ -1,6 +1,6 @@
 // local files
-import { Main } from "./layouts";
-import { Notes } from "./pages";
+import { Main } from './layouts';
+import { Notes } from './pages';
 
 function App() {
   return (
