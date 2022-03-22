@@ -7,8 +7,9 @@
   },
   "extends": [
     // you can use popular style guides such as the one of Airbnb, Google or Standard.
+    "react-app",
+    "react-app/jest",
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:react/jsx-runtime", // If you are using the new JSX transform from React 17
     "plugin:prettier/recommended" // eslint-config-prettier disables rules that conflict with Prettier. At the same time eslint-plugin-prettier adds the rule that format content using Prettier
   ],
