@@ -1,3 +1,6 @@
+// node modules
+import React from "react";
+
 // local files
 import { Input, Note, Button } from "../../components";
 import "./index.css";
@@ -10,8 +13,10 @@ function index() {
         <Input />
         <Button />
       </div>
-      {Array.from({ length: 3 }, (_, idx) => idx).map((item) => (
-        <Note />
+      {Array.from({ length: 3 }, (_, idx) => idx).map((_, idx) => (
+        <React.Fragment key={idx}>
+          <Note />
+        </React.Fragment>
       ))}
     </div>
   );
