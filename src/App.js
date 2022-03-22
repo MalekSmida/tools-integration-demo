@@ -1,12 +1,12 @@
-import "./App.css";
+// local files
+import { Main } from "./layouts";
+import { Notes } from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello world</h1>
-      </header>
-    </div>
+    <Main>
+      <Notes />
+    </Main>
   );
 }
 

@@ -1,0 +1,16 @@
+.notes {
+  min-height: 50vh;
+  width: 50%;
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.notes__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 0 0 10px 0;
+  border-bottom: 1px rgb(216, 216, 216) solid;
+}

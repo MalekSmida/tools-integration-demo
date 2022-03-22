@@ -1,0 +1,11 @@
+.note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.note:hover {
+  background-color: white;
+}
