@@ -30,7 +30,13 @@
     // Each rule has a value that is either off if you want to disable the rule, warn if it should show a warning or error if it should throw an error.
     "react/react-in-jsx-scope": "off", // importing react to a file is optional
     "no-console": "warn", // warns the use of console.log
-    "no-empty": [2, { "allowEmptyCatch": true }] // Severity should be one of the following: 0 = off, 1 = warn, 2 = error
+    "no-empty": [2, { "allowEmptyCatch": true }], // Severity should be one of the following: 0 = off, 1 = warn, 2 = error
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   },
   "settings": {
     "react": {
