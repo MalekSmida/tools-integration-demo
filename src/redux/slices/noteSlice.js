@@ -1,11 +1,13 @@
 // node modules
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  noteList: []
+};
+
 export const noteSlice = createSlice({
   name: 'note',
-  initialState: {
-    noteList: []
-  },
+  initialState,
   reducers: {
     /**
      * reducers are funtions that takes current state and update it

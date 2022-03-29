@@ -16,8 +16,8 @@ const getNotesAsync = () => async (dispatch) => {
     const notesList = await getNotes();
     if (notesList) {
       // get only first 5 elements of notesList
-      const payload = { notes: notesList.slice(0, 5) };
-      dispatch(onGetNotes(payload));
+      const payloadData = { notes: notesList.slice(0, 5) };
+      dispatch(onGetNotes(payloadData));
     }
     dispatch(hideLoading());
   } catch {}
@@ -27,13 +27,13 @@ const addNoteAsync = (data) => async (dispatch) => {
   try {
     dispatch(showLoading());
     await addNote(data);
-    const payload = {
+    const payloadData = {
       note: {
         ...data,
         id: Date.now() // unique id
       }
     };
-    dispatch(onAddNote(payload));
+    dispatch(onAddNote(payloadData));
     dispatch(hideLoading());
   } catch {}
 };
