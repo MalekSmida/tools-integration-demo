@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import LoadingBar from 'react-redux-loading-bar';
 
 // local files
 import './index.css';
@@ -13,6 +14,16 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <Provider> component makes the Redux store available to any nested components */}
     <Provider store={store}>
+      {/* Loading bar animation */}
+      <LoadingBar
+        showFastActions
+        style={{
+          backgroundColor: '#6c63ff',
+          height: '3px',
+          position: 'absolute',
+          zIndex: 999
+        }}
+      />
       <App />
     </Provider>
   </React.StrictMode>,
