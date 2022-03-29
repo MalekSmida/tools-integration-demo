@@ -4,17 +4,23 @@ import { createSlice } from '@reduxjs/toolkit';
 export const noteSlice = createSlice({
   name: 'note',
   initialState: {
-    notes: []
+    noteList: []
   },
   reducers: {
     onGetNotes: (state, action) => {
-      state.notes = [...action.payload.open];
+      state.noteList = [...action.payload.notes];
+    },
+    onAddNote: (state, action) => {
+      state.noteList = [action.payload.note, ...state.noteList];
+    },
+    onDeleteNote: (state, action) => {
+      state.noteList = state.noteList.filter((note) => note.id !== action.payload.id);
     }
   }
 });
 
-export const { onGetNotes } = noteSlice.actions;
+export const { onGetNotes, onAddNote, onDeleteNote } = noteSlice.actions;
 
-export const selectApp = (state) => state.app;
+export const selectNote = (state) => state.note;
 
 export default noteSlice.reducer;

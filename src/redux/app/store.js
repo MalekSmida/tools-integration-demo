@@ -8,6 +8,6 @@ import noteReducer from '../slices/noteSlice';
 export default configureStore({
   reducer: {
     note: noteReducer
-  }
-  // devTools: false
+  },
+  devTools: process.env.NODE_ENV !== 'production'
 });

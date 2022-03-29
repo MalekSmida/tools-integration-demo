@@ -9,3 +9,7 @@
 .note:hover {
   background-color: white;
 }
+
+.note__button {
+  cursor: pointer;
+}

@@ -5,4 +5,9 @@ async function getNotes() {
   return res.data;
 }
 
-export { getNotes };
+async function addNote() {
+  const res = await Http.post('/posts');
+  return res.data;
+}
+
+export { getNotes, addNote };
