@@ -1,3 +1,9 @@
+/**
+ * redux-thunk is already included in redux-toolkit
+ * redux-thunk allows you to make async actions (fetching data)
+ * thunk = function that returns function
+ */
+
 // local files
 import { getNotes, addNote } from '../../services/noteServices';
 import { onGetNotes, onAddNote } from '../slices/noteSlice';

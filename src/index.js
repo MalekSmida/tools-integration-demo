@@ -11,6 +11,7 @@ import store from './redux/app/store';
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <Provider> component makes the Redux store available to any nested components */}
     <Provider store={store}>
       <App />
     </Provider>

@@ -7,6 +7,10 @@ export const noteSlice = createSlice({
     noteList: []
   },
   reducers: {
+    /**
+     * reducers are funtions that takes current state and update it
+     * action.payload takes the data passed to action function when called
+     */
     onGetNotes: (state, action) => {
       state.noteList = [...action.payload.notes];
     },
@@ -19,8 +23,18 @@ export const noteSlice = createSlice({
   }
 });
 
+/**
+ * actions generated based on your reducers
+ * use dispatch to call this functions
+ * dispatch works only under Provider
+ */
 export const { onGetNotes, onAddNote, onDeleteNote } = noteSlice.actions;
 
+/**
+ * selector function
+ * state => entire redux store
+ * state.note => access to your named slice
+ */
 export const selectNote = (state) => state.note;
 
 export default noteSlice.reducer;
