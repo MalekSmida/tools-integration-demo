@@ -38,7 +38,7 @@ function Notes() {
       <h1>Note list</h1>
       <div className="notes__form">
         <Input name="text" value={inputData.text} onInputChange={onInputChange} />
-        <Button onSubmit={onSubmit} />
+        <Button title="Submit" onSubmit={onSubmit} />
       </div>
       {noteList?.map((note) => (
         <Fragment key={note.id}>

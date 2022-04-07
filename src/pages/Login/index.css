@@ -1,0 +1,10 @@
+.login {
+  min-height: 70vh;
+  width: 50%;
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

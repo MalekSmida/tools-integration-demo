@@ -1,10 +1,10 @@
 // local files
 import './index.css';
 
-function Button({ onSubmit }) {
+function Button({ title, onSubmit }) {
   return (
     <button className="customButton" onClick={onSubmit}>
-      Submit
+      {title}
     </button>
   );
 }
