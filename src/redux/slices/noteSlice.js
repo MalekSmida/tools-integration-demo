@@ -12,6 +12,7 @@ export const noteSlice = createSlice({
     /**
      * reducers are funtions that takes current state and update it
      * action.payload takes the data passed to action function when called
+     * if we called onGetNotes([1,2]) => action.payload === [1,2]
      */
     onGetNotes: (state, action) => {
       state.noteList = [...action.payload.notes];

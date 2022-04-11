@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux';
 // local files
 import { Main } from './layouts';
 import { Notes } from './pages';
-import { getNotesAsync } from './redux/thunks/noteThunk';
+import { getNotesThunk } from './redux/thunks/noteThunk';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getNotesAsync());
+    dispatch(getNotesThunk());
     return () => {};
   }, [dispatch]);
 

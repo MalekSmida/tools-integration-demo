@@ -10,7 +10,7 @@ import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import { getNotes, addNote } from '../../services/noteServices';
 import { onGetNotes, onAddNote } from '../slices/noteSlice';
 
-const getNotesAsync = () => async (dispatch) => {
+const getNotesThunk = () => async (dispatch) => {
   try {
     dispatch(showLoading());
     const notesList = await getNotes();
@@ -23,19 +23,21 @@ const getNotesAsync = () => async (dispatch) => {
   } catch {}
 };
 
-const addNoteAsync = (data) => async (dispatch) => {
+const addNoteThunk = (data) => async (dispatch) => {
   try {
     dispatch(showLoading());
-    await addNote(data);
     const payloadData = {
       note: {
-        ...data,
+        ...data, // title: "fakeTitle"
         id: Date.now() // unique id
       }
     };
+    await addNote(data);
     dispatch(onAddNote(payloadData));
     dispatch(hideLoading());
   } catch {}
 };
 
-export { getNotesAsync, addNoteAsync };
+export { getNotesThunk, addNoteThunk };
+
+// TODO: custom hook => generate id

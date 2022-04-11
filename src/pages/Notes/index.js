@@ -6,10 +6,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import './index.css';
 import { Input, Note, Button } from '../../components';
 import { selectNote } from '../../redux/slices/noteSlice';
-import { addNoteAsync } from '../../redux/thunks/noteThunk';
+import { addNoteThunk } from '../../redux/thunks/noteThunk';
 
 function Notes() {
   // redux hooks
+  /**
+   * redux store = { note: {noteList: []} }
+   */
   const { noteList } = useSelector(selectNote);
   const dispatch = useDispatch();
 
@@ -29,7 +32,7 @@ function Notes() {
     const noteObj = {
       title: inputData.text
     };
-    dispatch(addNoteAsync(noteObj));
+    dispatch(addNoteThunk(noteObj));
     setInputData((state) => ({ ...state, text: '' }));
   };
 
