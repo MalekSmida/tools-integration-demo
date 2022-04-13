@@ -11,7 +11,8 @@
     "react-app/jest",
     "eslint:recommended",
     "plugin:react/jsx-runtime", // If you are using the new JSX transform from React 17
-    "plugin:prettier/recommended" // eslint-config-prettier disables rules that conflict with Prettier. At the same time eslint-plugin-prettier adds the rule that format content using Prettier
+    "plugin:prettier/recommended", // eslint-config-prettier disables rules that conflict with Prettier. At the same time eslint-plugin-prettier adds the rule that format content using Prettier
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -23,7 +24,8 @@
   "plugins": [
     // you have to install the plugin as a dev dependency if you want your rules to work correctly.
     // As an example, eslint-plugin-react contains many rules related to React.
-    "react"
+    "react",
+    "react-hooks"
   ],
 
   "rules": {
@@ -36,7 +38,9 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "settings": {
     "react": {
