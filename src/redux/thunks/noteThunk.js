@@ -10,7 +10,7 @@ import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import { getNotes, addNote } from '../../services/noteServices';
 import { onGetNotes, onAddNote } from '../slices/noteSlice';
 
-const getNotesAsync = () => async (dispatch) => {
+const getNotesThunk = () => async (dispatch) => {
   try {
     dispatch(showLoading());
     const notesList = await getNotes();
@@ -23,7 +23,7 @@ const getNotesAsync = () => async (dispatch) => {
   } catch {}
 };
 
-const addNoteAsync = (data) => async (dispatch) => {
+const addNoteThunk = (data) => async (dispatch) => {
   try {
     dispatch(showLoading());
     await addNote(data);
@@ -38,4 +38,4 @@ const addNoteAsync = (data) => async (dispatch) => {
   } catch {}
 };
 
-export { getNotesAsync, addNoteAsync };
+export { getNotesThunk, addNoteThunk };

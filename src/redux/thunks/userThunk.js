@@ -40,9 +40,12 @@ const loadUserThunk = () => async (dispatch) => {
       dispatch(hideLoading());
       return;
     }
+    // in order to set user as authenticated first
+    dispatch(onLoadUser({ tokenFromStorage }));
 
     const res = await loadUserService(tokenFromStorage);
 
+    // finish load user data from api and add it to store
     dispatch(onLoadUser({ ...res, tokenFromStorage }));
 
     dispatch(hideLoading());

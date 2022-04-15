@@ -1,12 +1,12 @@
 // node modules
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // local files
 import './index.css';
 import { Input, Note, Button } from '../../components';
 import { selectNote } from '../../redux/slices/noteSlice';
-import { addNoteAsync } from '../../redux/thunks/noteThunk';
+import { addNoteThunk, getNotesThunk } from '../../redux/thunks/noteThunk';
 
 function Notes() {
   // redux hooks
@@ -29,9 +29,14 @@ function Notes() {
     const noteObj = {
       title: inputData.text
     };
-    dispatch(addNoteAsync(noteObj));
+    dispatch(addNoteThunk(noteObj));
     setInputData((state) => ({ ...state, text: '' }));
   };
+
+  useEffect(() => {
+    dispatch(getNotesThunk());
+    return () => {};
+  }, [dispatch]);
 
   return (
     <div className="notes">
