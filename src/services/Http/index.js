@@ -3,12 +3,19 @@ import axios from 'axios';
 
 //local files
 import { HttpConfig } from './config';
+// import store from '../../redux/app/store';
 
 let Http = axios.create({ baseURL: HttpConfig.baseURL });
 
+// const getUserState = () => {
+//   const state = store.getState();
+//   return state.user;
+// };
 // Http.interceptors.request.use(
 //   (req) => {
 //     // you can add token to header if user is authenticated
+//     const user = getUserState();
+//     if (user.isAuthenticated && user.jwt) req.headers['Authorization'] = user.jwt;
 //     return req;
 //   },
 //   (err) => {
