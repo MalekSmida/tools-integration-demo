@@ -7,12 +7,11 @@ async function loginService() {
 
 async function loadUserService(jwtToken) {
   // should set jwtoken in header
-  // const res = await Http.get('/users/1', {
-  //   headers: {
-  //     Authorization: jwtToken
-  //   }
-  // });
-  const res = await Http.get('/users/1');
+  const res = await Http.get('/users/1', {
+    headers: {
+      Authorization: jwtToken
+    }
+  });
   return res.data;
 }
 
