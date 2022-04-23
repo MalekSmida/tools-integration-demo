@@ -19,8 +19,9 @@ const getNotesThunk = () => async (dispatch) => {
       const payloadData = { notes: notesList.slice(0, 5) };
       dispatch(onGetNotes(payloadData));
     }
+  } finally {
     dispatch(hideLoading());
-  } catch {}
+  }
 };
 
 const addNoteThunk = (data) => async (dispatch) => {
@@ -34,8 +35,9 @@ const addNoteThunk = (data) => async (dispatch) => {
     };
     await addNote(data);
     dispatch(onAddNote(payloadData));
+  } finally {
     dispatch(hideLoading());
-  } catch {}
+  }
 };
 
 export { getNotesThunk, addNoteThunk };
