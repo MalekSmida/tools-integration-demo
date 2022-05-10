@@ -38,6 +38,6 @@ export const { onGetNotes, onAddNote, onDeleteNote } = noteSlice.actions;
  * state => entire redux store
  * state.note => access to your named slice
  */
-export const selectNote = (state) => state.note;
+export const selectNote = (store) => store.note;
 
 export default noteSlice.reducer;

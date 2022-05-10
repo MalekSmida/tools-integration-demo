@@ -1,13 +1,13 @@
 import Http from './Http';
 
 async function getNotes() {
-  const res = await Http.get('/posts');
-  return res.data;
+  const response = await Http.get('/posts');
+  return response.data;
 }
 
 async function addNote() {
-  const res = await Http.post('/posts');
-  return res.data;
+  const response = await Http.post('/posts');
+  return response.data;
 }
 
 export { getNotes, addNote };
