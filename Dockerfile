@@ -20,4 +20,4 @@ RUN npm install
 EXPOSE 4000
 
 # commandes the run on run time (when containers start running) 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start" ]
