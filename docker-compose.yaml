@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  clevertech-demo:
+    build: .
+    container_name: tools-integration-demo_c
+    ports:
+      - '4000:3000'
+    stdin_open: true
+    tty: true
+# volumes doesn't work on windows needs config
+#    volumes:
+#      - ./tools-integration-demo:/demo
+#      - ./demo/node_modules
