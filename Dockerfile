@@ -26,4 +26,5 @@ EXPOSE 3000
 # commandes the run on run time (when containers start running) 
 CMD [ "npm", "run", "start" ]
 
-# run > docker build -t tools-integration-demo .
+# to build an image run
+# > docker build -t tools-integration-demo .
